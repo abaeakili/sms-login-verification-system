@@ -1,6 +1,6 @@
 <?php
 
-echo "Hello World";
+// echo "Hello World";
 
 ?>
 
@@ -17,7 +17,8 @@ echo "Hello World";
 	<div class="wrapper-inner">
 		<div class="header-wrapper">
 			<h1>Welcome</h1>
-			<h3>A sample simple Complete Login and Registration system with Email & Mobile verification</h3>			
+			<h3>Complete Login and Registration system with Email & Mobile verification</h3>
+            <h4>Built on PHP & MySQL. </h4>			
 		</div>
         
         <!--HEADER WRAPPER ENDS-->
