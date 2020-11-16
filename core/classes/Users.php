@@ -102,6 +102,7 @@
 			return $this->get('users', array('user_id' => $user_id));
 		}
 
+        // Method to logout user
 		public function logout(){
 			$_SESSION = array();
 			session_destroy();
