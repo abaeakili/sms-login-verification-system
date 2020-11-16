@@ -13,6 +13,7 @@
 			return filter_var($email, FILTER_VALIDATE_EMAIL);
 		}
 
+        // Check length of user inputs
 		public function length($input, $min, $max){
 			if(strlen($input) > $max){
 				return true;
