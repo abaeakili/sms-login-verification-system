@@ -1,5 +1,6 @@
 <?php 
 	class Validate{
+// Method to escape user inputs
 
 		public static function escape($input){
 			$input = trim(strip_tags($input));

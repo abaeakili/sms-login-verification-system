@@ -5,8 +5,9 @@
  }
   if(isset($_POST['login'])){
  	$email    = Validate::escape($_POST['email']);
- 	$password = Validate::escape($_POST['password']);
-
+     $password = Validate::escape($_POST['password']);
+     
+// Method to filter email
  	if(empty($email) or empty($password)){
  		$error = "Enter your email and password to login!";
  	}else {
