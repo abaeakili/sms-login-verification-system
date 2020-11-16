@@ -76,18 +76,19 @@
 				$stmt->execute();
 			}
 		}
-
+        // Method to Check if email exists in the database
 		public function emailExist($email){
 			$email = $this->get('users', array('email' => $email));
 			return ((!empty($email))) ? $email : false;
 		}
 
+        // Method to Check if username exists in the database
 		public function usernameExist($username){
 			$username = $this->get('users', array('username' => $username));
 			return ((!empty($username))) ? $username : false;
 		}
 
-
+        // Method to hash passwords in the database
 		public function hash($password){
 			return password_hash($password, PASSWORD_BCRYPT);
 		}

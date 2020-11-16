@@ -15,7 +15,8 @@
  			$error = "Invaild email";
  		}else{
  			if($user = $userObj->emailExist($email)){
- 				$hash = $user->password;
+                 $hash = $user->password;
+                 // verifies if password entered matches hash in database
  				if(password_verify($password, $hash)){
  					//login
  					$_SESSION['user_id'] = $user->user_id;
