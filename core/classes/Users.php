@@ -97,6 +97,7 @@
 			header("Location: ".BASE_URL.$location);
 		}
 
+        // Method to return User Data
 		public function userData($user_id = int){
 			return $this->get('users', array('user_id' => $user_id));
 		}

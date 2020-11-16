@@ -3,7 +3,7 @@
 	define('DB_NAME', 'login');
 	define('DB_USER', 'login');
 	define('DB_PASS', '');
-	define('BASE_URL', 'http://http://localhost/sms-login-verification-system-php-mysql/');
+	define('BASE_URL', 'http://localhost/sms-login-verification-system-php-mysql/');
 
 	//SMTP
 	define("M_HOST", 'smtp.gmail.com');

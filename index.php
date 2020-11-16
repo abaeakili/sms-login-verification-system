@@ -18,7 +18,9 @@
                  $hash = $user->password;
                  // verifies if password entered matches hash in database
  				if(password_verify($password, $hash)){
- 					//login
+                     //login
+                     
+                     // Method for redirecting a user after logging in
  					$_SESSION['user_id'] = $user->user_id;
  					$userObj->redirect('home.php');
  				}else{
