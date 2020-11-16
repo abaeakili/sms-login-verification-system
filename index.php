@@ -1,7 +1,34 @@
 <?php
+ include 'core/init.php';
+  if($userObj->isLoggedIn()){
+ 	$userObj->redirect('home.php');
+ }
+  if(isset($_POST['login'])){
+ 	$email    = Validate::escape($_POST['email']);
+ 	$password = Validate::escape($_POST['password']);
 
-// echo "Hello World";
-
+ 	if(empty($email) or empty($password)){
+ 		$error = "Enter your email and password to login!";
+ 	}else {
+ 		if(!Validate::filterEmail($email)){
+ 			$error = "Invaild email";
+ 		}else{
+ 			if($user = $userObj->emailExist($email)){
+ 				$hash = $user->password;
+ 				if(password_verify($password, $hash)){
+ 					//login
+ 					$_SESSION['user_id'] = $user->user_id;
+ 					$userObj->redirect('home.php');
+ 				}else{
+ 					$error = "Email or Password is incorrect!";
+ 				}
+  			}else{
+ 				$error = "No account with that email exists";
+ 			}
+ 		}
+ 	}
+ }
+ 
 ?>
 
 <!DOCTYPE html>
@@ -17,8 +44,8 @@
 	<div class="wrapper-inner">
 		<div class="header-wrapper">
 			<h1>Welcome! Karibu!</h1>
-			<h3>Complete Login and Registration system with Email & Mobile verification</h3>
-            <h4>Built on PHP & MySQL. </h4>			
+			<h3>Complete Login and Registration system with Email & Mobile verification Built on PHP & MySQL.</h3>
+            <h4> </h4>			
 		</div>
         
         <!--HEADER WRAPPER ENDS-->
