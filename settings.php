@@ -33,6 +33,7 @@
    			$errors['username'] = "Username is already teken!";
    		}else
 
+		   // Validating email 
    		if(!Validate::filterEmail($email)){
    			$errors['email'] = "Invalid email format";
    		

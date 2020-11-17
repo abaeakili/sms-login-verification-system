@@ -43,6 +43,7 @@
 			}
 		}
 
+        // Fuction to validate Settings Page
 		public function update($table, $fields, $condition){
 			$columns  = '';
 			$where    = " WHERE ";
