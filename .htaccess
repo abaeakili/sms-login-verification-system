@@ -1,2 +1,3 @@
 RewriteEngine On
 RewriteRule ^account/settings/?$ settings.php
+RewriteRule ^register/?$ register.php

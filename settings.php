@@ -42,7 +42,7 @@
    		
    		}else{
    			if(password_verify($password, $user->password)){
-   				//update user
+   				//Method to update the user
    				  $userObj->update('users', array('firstName' => $firstName, 'lastName' => $lastName, 'username' => $username, 'email' => $email), array('user_id' => $user_id));
    				  $userObj->redirect('account/settings');
    			}else{
