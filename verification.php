@@ -3,7 +3,8 @@
  	$user_id = $_SESSION['user_id'];
 	$user    = $userObj->userData($user_id);
 	$verifyObj->authOnly();
- 
+
+	// Verify using email
 	if(isset($_POST['email'])){
 		$link = Verify::generateLink();
     	$message = "{$user->firstName}, Your account has been created, Vist this link to verify your account : <a href='http://localhost/login-system/verification/{$link}'>Verify Link</a>";
@@ -29,6 +30,7 @@
     	}
     }
 
+	// Verify using phone
     if(isset($_POST['phone'])){
     	$number  = Validate::escape($_POST['number']);
     	if(!empty($number)){
