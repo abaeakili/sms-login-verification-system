@@ -12,7 +12,8 @@
 
 			//sql query
 			$sql = "SELECT * FROM `{$table}` WHERE `{$columns}` = :{$columns}";
-			//check if sql query is set
+			
+			//check if sql query is set/prepared
 			if($stmt = $this->db->prepare($sql)){
 				foreach ($fields as $key => $value) {
 					//bind columns
@@ -24,7 +25,7 @@
 			}
 		}
 	 
-
+		// Method to insertdata to database
 		public function insert($table, $fields = array()){
 			$columns = implode(", ", array_keys($fields));
 			$values  = ":".implode(", :", array_keys($fields));
