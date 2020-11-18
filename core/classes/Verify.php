@@ -51,6 +51,7 @@
 
 		}
 
+		// Method to send verification email using PHPMailer
 		public function sendToMail($email, $message, $subject){
 			$mail  = new PHPMailer\PHPMailer\PHPMailer(true);
 			$mail->isSMTP();

@@ -7,6 +7,7 @@
 	// Verify using email
 	if(isset($_POST['email'])){
 		$link = Verify::generateLink();
+		# Adding Verification Link to send to mail Method
     	$message = "{$user->firstName}, Your account has been created, Vist this link to verify your account : <a href='http://localhost/login-system/verification/{$link}'>Verify Link</a>";
     	$subject = "Account Verification";
     	$verifyObj->sendToMail($user->email, $message, $subject);
